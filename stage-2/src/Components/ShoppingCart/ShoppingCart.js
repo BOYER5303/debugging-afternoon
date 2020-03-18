@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./ShoppingCart.css";
+//import NavBar from "../NavBar/NavBar"
 
 class ShoppingCart extends Component {
   render() {

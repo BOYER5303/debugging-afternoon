@@ -5,7 +5,7 @@ import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
-  constuctor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       products: [],
@@ -17,8 +17,7 @@ class App extends Component {
     this.navigate = this.navigate.bind(this);
   }
   componentDidMount() {
-    axios
-      .get("https://practiceapi.devmountain.com/products/")
+      axios.get("https://practiceapi.devmountain.com/products/")
       .then(response => {
         this.setState({
           products: response
@@ -49,7 +48,7 @@ class App extends Component {
     }
   }
   render() {
-    const { products, cart, showCart } = this.state;
+    const { products, cart, showCart} = this.state;
     return (
       <div className="App">
         <NavBar navigate={this.navigate} />
