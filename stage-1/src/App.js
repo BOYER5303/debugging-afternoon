@@ -27,7 +27,8 @@ class App extends Component {
   }
   addToCart(item) {
     this.setState({
-      cart: [...this.state.cart, item]
+      cart: [...this.state.cart, this.state.item],
+      item:''
     });
   }
   removeFromCart(index) {
@@ -55,9 +56,11 @@ class App extends Component {
         <NavBar navigate={this.navigate} />
         <div className="main-container">
           {showCart ? (
-            <ShoppingCart cart={cart} />
+            <ShoppingCart cart={cart} removeFromCart={this.removeFromCart} />
+            // <ShoppingCart cart={this.state.cart} />
           ) : (
-            <StoreFront products={products} />
+            //<StoreFront products={products} />
+            <StoreFront products={products} addToCart={this.addToCart} />
           )}
         </div>
       </div>

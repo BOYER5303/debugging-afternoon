@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './StoreFront.css';
 
+
 class StoreFront extends Component {
-  constructor(){
-    super();
-    
-  }
+  
   render() {
     let productDisplay = this.props.products.map((element, index) => {
       return (
@@ -20,6 +18,7 @@ class StoreFront extends Component {
     })
     return (
       <div className="storefront-container">
+        {productDisplay}
       </div>
     )
   }
